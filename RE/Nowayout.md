@@ -1,5 +1,6 @@
 # Mô tả thử thách
 <img width="955" height="801" alt="image" src="https://github.com/user-attachments/assets/ef7ac631-ce15-4a98-99b4-03ac74e2407e" />
+
 ## Phân tích chương trình
 Sau khi tải 2 file về và nén, ta vào trong 1 trò chơi với dòng chữ trên cùng "Escape to find the flag"
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f7249fac-cc11-415f-a6c3-5ef1034fd985" />
@@ -14,6 +15,7 @@ Dùng dnSpy để phân tích file Assembly-CSharp.dll, tệp DLL chứa mã C# 
 <img width="1076" height="132" alt="image" src="https://github.com/user-attachments/assets/7bfd0a31-ba47-4a44-b28b-bd09d832b684" />
 Giờ thì ta có thể nhảy giữa không trung để qua tường và đến với lá cờ trắng, khi chạm vào lá cờ thì flag sẽ hiện ra
 <img width="1920" height="1080" alt="Screenshot (238)" src="https://github.com/user-attachments/assets/4edbf556-7bb1-4547-b9ee-758bdfa27994" />
+
 ## picoCTF{WELCOME_TO_UNITY!!}
 
 
