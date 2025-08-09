@@ -123,3 +123,50 @@ if __name__ == "__main__":
 1. Hàm chia plaintext làm 2 nửa
 2. Chèn inner_text vào giữa
 3. Chia dữ liệu thành các block 16 bytes rồi XOR với key_hash(mã hóa bằng SHA-256)
+Khi chạy chương trình, ta được kết quả
+<img width="1562" height="227" alt="image" src="https://github.com/user-attachments/assets/d659ddf1-a50a-4430-9504-70a0fcf6955b" />
+Vậy ta đã có key và ciphertext, ta có thể giải mã được từng khối của blockchain đã mã hóa và trích được flag
+Ta sẽ viết 1 script để giải m
+<pre lang="markdown"> 
+import hashlib
+import re
+ 
+block_size = 16
+ 
+ 
+def xor_bytes(a, b):
+    return bytes(x ^ y for x, y in zip(a, b))
+ 
+ 
+def decrypt(ciphertext, key):
+    plaintext = b''
+    key_hash = hashlib.sha256(key).digest()
+ 
+    for i in range(0, len(ciphertext), block_size):
+        block = ciphertext[i:i + block_size]
+        plain_block = xor_bytes(block, key_hash)
+        plaintext += plain_block
+ 
+    return plaintext
+ 
+ 
+def main():
+    with open("enc_flag", "r") as f:
+        key, c = f.readlines()
+ 
+    key = eval(key[5:])
+    c = eval(c[22:])
+ 
+    decrypted_blockchain = decrypt(c, key)
+ 
+    flag = re.search(b'picoCTF{.*}', decrypted_blockchain)
+    print(flag.group(0).decode("utf-8"))
+ 
+ 
+if __name__ == "__main__":
+    main()
+</pre>
+Chạy chương trình ta sẽ được flag
+# picoCTF{block_3SRhViRbT1qcX_XUjM0r49cH_qCzmJZzBK_4989f9ea}
+
+
