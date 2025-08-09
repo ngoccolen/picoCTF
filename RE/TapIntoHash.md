@@ -167,6 +167,6 @@ if __name__ == "__main__":
     main()
 </pre>
 Chạy chương trình ta sẽ được flag
-# picoCTF{block_3SRhViRbT1qcX_XUjM0r49cH_qCzmJZzBK_4989f9ea}
+## picoCTF{block_3SRhViRbT1qcX_XUjM0r49cH_qCzmJZzBK_4989f9ea}
 
 
